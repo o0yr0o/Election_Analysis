@@ -36,3 +36,13 @@ Furthermore, Tom's manager wants Tom and me to write a code to automate the elec
 
 ## Election-Audit Summary
 
+In order to make this script can be used for any election, some modifications should be made according to different datasets. For example:
+
+1. ![modification_row](https://user-images.githubusercontent.com/82549782/118348068-ba54ea80-b515-11eb-90e5-b2fa0d8cb6ed.png)
+   - The path to load a file should be changed according to the location where you save the file. The script uses the "join()" function, which can joins file path components together when they are provided as separate strings; it then returns a direct path with the appropriate operating system separator. Therefore, we can add the folder and the file to join together. The folder and file names are modified according to the data file name provided and the folder name in which it is located
+   - We can also use direct path in the script, the code would be "file_to_load = 'Resources/election_results.csv'" in this case. The folder and file names can be modified. Furthermore, if the data file is in the same level as python file, then the path would be 'election_results.csv'.
+
+2. ![modification_1](https://user-images.githubusercontent.com/82549782/118347064-54b13000-b50e-11eb-950e-3a9c7e37da99.png)
+ 
+   - As shown in the graph, The candidate name is extracted from the third column of each row, and the county name is extracted from the second column of each row. 
+   - To extract the right data, we need to change the row number based on the provided dataset. Since the first column is 0, the number of columns from which to retrieve data should minus one.
